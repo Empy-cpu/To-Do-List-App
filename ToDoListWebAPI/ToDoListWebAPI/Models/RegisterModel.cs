@@ -20,4 +20,4 @@ namespace ToDoListWebAPI.Models
         public string Password { get; set; }
     }
 }
-}
+

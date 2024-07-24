@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem("jwt", token);
         this.invalidLogin = false;
         this.router.navigate(["/"]);
-        this.toastr.success("LoggedIn successfully", "Payment Detail Register");
+        this.toastr.success("LoggedIn successfully");
       },
       err => {
         this.invalidLogin = true;

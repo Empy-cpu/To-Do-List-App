@@ -19,6 +19,7 @@ export class TodoAppService {
   registerData: Register = new Register();
 
   postToDoItem() {
+    console.log("Item added");
     return this.http.post(this.baseURL, this.todoData, {
       headers: new HttpHeaders({
         "Content-Type": "application/json"

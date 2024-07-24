@@ -30,6 +30,7 @@ namespace ToDoListWebAPI.Models
                 entity.Property(e => e.ItemStatus)
                 .IsRequired()
                 .HasMaxLength(1);
+               
             });
 
             base.OnModelCreating(builder);

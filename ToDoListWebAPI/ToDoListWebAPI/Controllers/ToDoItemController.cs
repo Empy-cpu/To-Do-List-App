@@ -39,8 +39,7 @@ namespace ToDoListWebAPI.Controllers
             return toDoItemModel;
         }
 
-        // PUT: api/ToDoItem/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        
         [HttpPut("{id}")]
         public async Task<IActionResult> PutToDoItemModel(int id, ToDoItemModel toDoItemModel)
         {
@@ -70,8 +69,7 @@ namespace ToDoListWebAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/ToDoItem
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        
         [HttpPost]
         public async Task<ActionResult<ToDoItemModel>> PostToDoItemModel(ToDoItemModel toDoItemModel)
         {
@@ -81,7 +79,7 @@ namespace ToDoListWebAPI.Controllers
             return CreatedAtAction("GetToDoItemModel", new { id = toDoItemModel.ItemId }, toDoItemModel);
         }
 
-        // DELETE: api/ToDoItem/5
+       
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteToDoItemModel(int id)
         {

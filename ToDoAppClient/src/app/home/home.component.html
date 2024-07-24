@@ -1,28 +1,31 @@
-<h1>Home Page</h1>
+<h1 class="title">My To-Do List App</h1>
 
-<br>
-<div *ngIf="isUserAuthenticated()" style="color:rgb(255, 0, 170);">
-  <h2>
-    <app-todo-items></app-todo-items>
-  </h2>
+<div *ngIf="isUserAuthenticated()" class="todo-items">
+  <app-todo-items></app-todo-items>
 </div>
 
-<br>
-<ul>
- 
-  <li *ngIf="!isUserAuthenticated()">
-    <div class="form-group">
-      <a [routerLink]="['/login']" routerLinkActive="active"><button class="btn btn-info btn-lg btn-block" type="submit">Login</button></a>
-    </div>
-  </li>
-  <li *ngIf="!isUserAuthenticated()">
-    <div class="form-group">
-      <a [routerLink]="['/register']" routerLinkActive="active"><button class="btn btn-info btn-lg btn-block" type="submit">Register</button></a>
-    </div>
-  </li>
-  <li *ngIf="isUserAuthenticated()">
+<div class="menu-container">
+  <ul class="menu-list">
+    <li *ngIf="!isUserAuthenticated()" class="menu-item">
       <div class="form-group">
-        <button class="btn btn-info btn-lg btn-block" type="submit"><a class="logout" (click)="logOut()">Logout</a></button>
-    </div>
-  </li>
-</ul>
+        <a [routerLink]="['/login']" routerLinkActive="active">
+          <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+        </a>
+      </div>
+    </li>
+    <li *ngIf="!isUserAuthenticated()" class="menu-item">
+      <div class="form-group">
+        <a [routerLink]="['/register']" routerLinkActive="active">
+          <button class="btn btn-primary btn-lg btn-block" type="submit">Register</button>
+        </a>
+      </div>
+    </li>
+    <li *ngIf="isUserAuthenticated()" class="menu-item">
+      <div class="form-group">
+        <button class="btn btn-primary btn-lg btn-block" type="submit">
+          <a class="logout" (click)="logOut()">Logout</a>
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>

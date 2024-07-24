@@ -1,1 +1,1 @@
-web: dotnet ToDoListWebAPI.dll
+web: cd ToDoListWebAPI && dotnet run

@@ -17,12 +17,21 @@ namespace ToDoListWebAPI.Controllers
         private readonly UserManager<ApplicationUser> userManager;
         private readonly RoleManager<IdentityRole> roleManager;
         private readonly IConfiguration _configuration;
+        private UserManager<ApplicationUser> userManager1;
+        private Castle.Core.Configuration.IConfiguration configuration;
 
         public AuthenticationController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration)
         {
             this.userManager = userManager;
             this.roleManager = roleManager;
             _configuration = configuration;
+        }
+
+        public AuthenticationController(UserManager<ApplicationUser> userManager1, RoleManager<IdentityRole> roleManager, Castle.Core.Configuration.IConfiguration configuration)
+        {
+            this.userManager1 = userManager1;
+            this.roleManager = roleManager;
+            this.configuration = configuration;
         }
 
         [HttpPost]
